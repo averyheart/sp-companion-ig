@@ -152,7 +152,7 @@ const CSS = `
   .ig-divider { height:1px; background:rgba(255,255,255,0.06); }
   .ig-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .ig-cell { aspect-ratio:1; overflow:hidden; cursor:pointer; position:relative; background:#181818; }
-  .ig-cell img { width:100%; height:100%; object-fit:cover; transition:transform 0.3s,filter 0.3s; }
+  .ig-cell img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 0.3s,filter 0.3s; }
   .ig-cell:hover img { transform:scale(1.05); filter:brightness(0.7); }
   .ig-cell-over { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:14px; opacity:0; transition:opacity 0.22s; font-size:12.5px; font-weight:600; color:#fff; }
   .ig-cell:hover .ig-cell-over { opacity:1; }
@@ -176,7 +176,7 @@ const CSS = `
   .lb-actions { display:flex; align-items:center; gap:14px; margin-bottom:10px; }
   .lb-actions button { background:none; border:none; color:#ede9e3; cursor:pointer; padding:0; display:flex; align-items:center; transition:transform 0.15s; }
   .lb-actions button:hover { transform:scale(1.12); }
-  .lb-likes   { color:#ede9e3; font-size:13px; font-weight:600; margin-bottom:5px; }
+  .lb-likes   { font-size:13px; font-weight:600; margin-bottom:5px; }
   .lb-caption { font-size:13px; color:#b0aaa3; line-height:1.55; margin-bottom:4px; }
   .lb-caption strong { color:#ede9e3; font-weight:600; }
   .lb-date    { font-size:10.5px; color:#3a3632; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:12px; }
@@ -246,7 +246,7 @@ function StoryViewer({ images, label, avatar, username, onClose }) {
     ),
     // Image
     e("div", { style:{ flex:1, position:"relative", overflow:"hidden" } },
-      e("img", { src: imgSrc(images[index]), alt:"", style:{ width:"100%", height:"100%", objectFit:"cover" } }),
+      e("img", { src: imgSrc(images[index]), alt:"", style:{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top" } }),
       e("div", { onClick: () => { clearInterval(timer.current); if (index > 0) setIndex(i => i - 1); }, style:{ position:"absolute", inset:"0 60% 0 0", cursor:"pointer" } }),
       e("div", { onClick: () => { clearInterval(timer.current); if (index < images.length - 1) setIndex(i => i + 1); else onClose(); }, style:{ position:"absolute", inset:"0 0 0 40%", cursor:"pointer" } })
     )
@@ -409,18 +409,18 @@ function InstagramProfile() {
           e("button", { className:"lb-post-dots" }, e(DotsIcon))
         ),
 
-        e("img", { className:"lb-img", src: imgSrc(openPost.src), alt: openPost.caption }),
+        e("img", { className:"lb-img", src: imgSrc(openPost.src), alt: openPost.caption, style:{ objectPosition:"top" } }),
 
         e("div", { className:"lb-scroll" },
           e("div", { className:"lb-body" },
             e("div", { className:"lb-actions" },
               e("button", { onClick: () => setLikedPosts(p => ({ ...p, [openPost.id]: !p[openPost.id] })) }, e(HeartIcon, { filled: !!likedPosts[openPost.id] })),
               e("button", null, e(CommentIcon)),
-              e("a", { href: companionUrl, target:"_blank", rel:"noopener noreferrer", style:{ colour:"inherit", display:"flex", alignItems:"center" } }, e(ShareIcon)),
+              e("a", { href: companionUrl, target:"_blank", rel:"noopener noreferrer", style:{ color:"#ede9e3", display:"flex", alignItems:"center", textDecoration:"none" } }, e(ShareIcon)),
               e("div", { style:{ flex:1 } }),
               e("button", { onClick: () => setSavedPosts(p => ({ ...p, [openPost.id]: !p[openPost.id] })) }, e(BookmarkIcon, { filled: !!savedPosts[openPost.id] }))
             ),
-            e("div", { className:"lb-likes" }, fmt(openPost.likes + (likedPosts[openPost.id] ? 1 : 0)), " likes"),
+            e("div", { className:"lb-likes", style:{ color:"#ede9e3" } }, fmt(openPost.likes + (likedPosts[openPost.id] ? 1 : 0)), " likes"),
             e("div", { className:"lb-caption" }, e("strong", null, profile.username, " "), openPost.caption),
             e("div", { className:"lb-date" }, openPost.date, " ago")
           ),
