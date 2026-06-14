@@ -47,7 +47,7 @@
       "src": "Luca_2.jpeg",
       "caption": "Your caption here.",
       "location": "Location or null",
-      "likes": 12000,
+      "likes": 52301,
       "commentCount": 84,
       "date": "1d",
       "comments": [
@@ -72,7 +72,7 @@
       "location": "Location or null",
       "likes": 651238,
       "commentCount": 102,
-      "date": "1d",
+      "date": "3d",
       "comments": [
         {
           "user": "@veridianfc",
@@ -93,9 +93,9 @@
       "src": "Luca_4.jpeg",
       "caption": "Your caption here.",
       "location": "Location or null",
-      "likes": 12000,
-      "commentCount": 84,
-      "date": "1d",
+      "likes": 85631,
+      "commentCount": 95,
+      "date": "5d",
       "comments": [
         {
           "user": "@username1",
