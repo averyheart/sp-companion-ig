@@ -16,7 +16,7 @@
     "cover": "Luca_4.jpeg",
     "images": [
       "Luca_4.jpeg",
-      "matchday-02.jpg",
+      "Luca_6.jpeg",
       "matchday-03.jpg"
     ]
   },
@@ -31,10 +31,10 @@
   },
   {
     "id": "h3",
-    "label": "Sweden",
-    "cover": "sweden-cover.jpg",
+    "label": "Home",
+    "cover": "Luca_5.jpeg",
     "images": [
-      "sweden-01.jpg",
+      "Luca_5.jpeg",
       "sweden-02.jpg",
       "sweden-03.jpg",
       "sweden-04.jpg"
@@ -110,6 +110,6 @@
           "text": "Third comment here."
         }
       ]
-    },
+    }
   ]
 }
