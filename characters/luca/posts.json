@@ -70,12 +70,12 @@
       "src": "Luca_3.jpeg",
       "caption": "Your caption here.",
       "location": "Location or null",
-      "likes": 12000,
-      "commentCount": 84,
+      "likes": 651238,
+      "commentCount": 102,
       "date": "1d",
       "comments": [
         {
-          "user": "@username1",
+          "user": "@veridianfc",
           "text": "First comment here."
         },
         {
