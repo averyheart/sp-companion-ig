@@ -161,7 +161,7 @@ const CSS = `
   .ig-error { padding:40px 18px; text-align:center; color:#6a6560; font-size:13px; line-height:1.6; }
   .sk { animation:pulse 1.4s ease-in-out infinite; }
   .lb-bg { position:fixed; inset:0; background:rgba(0,0,0,0.9); backdrop-filter:blur(10px); z-index:100; display:flex; align-items:center; justify-content:center; animation:fadeIn 0.16s ease; }
-  .lb { background:#161616; border-radius:14px; width:min(430px,95vw); max-height:94vh; overflow:hidden; display:flex; flex-direction:column; position:relative; border:1px solid rgba(255,255,255,0.07); animation:slideUp 0.2s ease; }
+  .lb { font-family:'National Park',sans-serif; background:#0e0e0e; min-height:100vh; color:#ede9e3; max-width:480px; margin:0 auto; background:#161616; border-radius:14px; width:min(430px,95vw); max-height:94vh; overflow:hidden; display:flex; flex-direction:column; position:relative; border:1px solid rgba(255,255,255,0.07); animation:slideUp 0.2s ease; }
   .lb-post-header { display:flex; align-items:center; gap:10px; padding:12px 14px; flex-shrink:0; border-bottom:1px solid rgba(255,255,255,0.05); }
   .lb-post-av { width:34px; height:34px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#1a1a1a; }
   .lb-post-info { flex:1; min-width:0; }
