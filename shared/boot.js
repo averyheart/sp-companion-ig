@@ -111,16 +111,16 @@ const ChevRight = () =>
 
 // ─── CSS ─────────────────────────────────────────────────────────────────────
 const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..700&display=swap');
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
   @keyframes slideUp { from{transform:translateY(18px);opacity:0} to{transform:translateY(0);opacity:1} }
   @keyframes pulse   { 0%,100%{opacity:0.4} 50%{opacity:0.8} }
-  .ig { font-family:'DM Sans',sans-serif; background:#0e0e0e; min-height:100vh; color:#ede9e3; max-width:480px; margin:0 auto; }
+  .ig { font-family:'National Park',sans-serif; background:#0e0e0e; min-height:100vh; color:#ede9e3; max-width:480px; margin:0 auto; }
   .ig-top { display:flex; align-items:center; gap:10px; padding:13px 16px; position:sticky; top:0; background:rgba(14,14,14,0.94); backdrop-filter:blur(14px); z-index:20; }
   .ig-top-back { background:none; border:none; color:#ede9e3; cursor:pointer; padding:0; display:flex; align-items:center; transition:opacity 0.15s; flex-shrink:0; text-decoration:none; }
   .ig-top-back:hover { opacity:0.7; }
-  .ig-top-name { font-family:'DM Serif Display',serif; font-size:17px; letter-spacing:-0.2px; flex:1; }
+  .ig-top-name { font-family:'National Park',sans-serif; font-size:17px; letter-spacing:-0.2px; flex:1; }
   .ig-top-dots { background:none; border:none; color:#ede9e3; cursor:pointer; padding:0; display:flex; align-items:center; opacity:0.6; }
   .ig-profile { padding:18px 18px 0; }
   .ig-profile-row { display:flex; align-items:center; gap:22px; margin-bottom:14px; }
@@ -130,12 +130,12 @@ const CSS = `
   .ig-av-inner img { width:100%; height:100%; object-fit:cover; }
   .ig-stats { display:flex; gap:26px; flex:1; justify-content:center; }
   .ig-stat { display:flex; flex-direction:column; align-items:center; gap:1px; }
-  .ig-stat-num { font-family:'DM Serif Display',serif; font-size:19px; line-height:1; }
+  .ig-stat-num { font-family:'National Park',sans-serif; font-size:19px; line-height:1; }
   .ig-stat-lbl { font-size:11px; color:#6a6560; font-weight:400; letter-spacing:0.03em; }
   .ig-name { display:flex; align-items:center; gap:5px; font-weight:600; font-size:13.5px; margin-bottom:4px; }
   .ig-bio  { font-size:12.5px; color:#7a7470; line-height:1.55; margin-bottom:14px; }
   .ig-actions { display:flex; gap:8px; margin-bottom:18px; }
-  .ig-btn { flex:1; padding:7.5px 0; border-radius:9px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; border:none; transition:all 0.18s; text-decoration:none; display:flex; align-items:center; justify-content:center; }
+  .ig-btn { flex:1; padding:7.5px 0; border-radius:9px; font-family:'National Park',sans-serif; font-size:13px; font-weight:600; cursor:pointer; border:none; transition:all 0.18s; text-decoration:none; display:flex; align-items:center; justify-content:center; }
   .ig-btn-fon  { background:#c8a068; color:#0e0e0e; }
   .ig-btn-fon:hover  { background:#d4ae78; }
   .ig-btn-foff { background:#1e1e1e; color:#ede9e3; border:1px solid #2c2c2c; }
@@ -154,7 +154,7 @@ const CSS = `
   .ig-cell { aspect-ratio:1; overflow:hidden; cursor:pointer; position:relative; background:#181818; }
   .ig-cell img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 0.3s,filter 0.3s; }
   .ig-cell:hover img { transform:scale(1.05); filter:brightness(0.7); }
-  .ig-cell-over { position:absolute; inset:0; display:flex; align-items:centre; justify-content:centre; gap:14px; opacity:0; transition:opacity 0.22s; font-size:12.5px; font-weight:600; colour:#fff; }
+  .ig-cell-over { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:14px; opacity:0; transition:opacity 0.22s; font-size:12.5px; font-weight:600; color:#fff; }
   .ig-cell:hover .ig-cell-over { opacity:1; }
   .ig-cell-stat { display:flex; align-items:center; gap:5px; }
   .ig-empty { grid-column:1/-1; padding:60px 18px; text-align:center; color:#333; font-size:13px; }
@@ -162,7 +162,7 @@ const CSS = `
   .sk { animation:pulse 1.4s ease-in-out infinite; }
   .lb-bg { position:fixed; inset:0; background:rgba(0,0,0,0.9); backdrop-filter:blur(10px); z-index:100; display:flex; align-items:center; justify-content:center; animation:fadeIn 0.16s ease; }
   .lb { background:#161616; border-radius:14px; width:min(430px,95vw); max-height:94vh; overflow:hidden; display:flex; flex-direction:column; position:relative; border:1px solid rgba(255,255,255,0.07); animation:slideUp 0.2s ease; }
-  .lb-post-header { display:flex; align-items:centre; gap:10px; padding:12px 14px; flex-shrink:0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .lb-post-header { display:flex; align-items:center; gap:10px; padding:12px 14px; flex-shrink:0; border-bottom:1px solid rgba(255,255,255,0.05); }
   .lb-post-av { width:34px; height:34px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#1a1a1a; }
   .lb-post-info { flex:1; min-width:0; }
   .lb-post-uname { font-size:13px; font-weight:600; color:#ede9e3; display:flex; align-items:center; gap:4px; }
@@ -194,7 +194,7 @@ const CSS = `
   @media(max-width:560px){ .lb-nav.prev{left:8px} .lb-nav.next{right:8px} }
   .dropdown-wrap { position:relative; }
   .dropdown-menu { position:absolute; top:100%; right:0; margin-top:6px; background:#1e1e1e; border:1px solid #2c2c2c; border-radius:10px; overflow:hidden; min-width:180px; z-index:30; animation:fadeIn 0.15s ease; }
-  .dropdown-item { display:block; width:100%; padding:11px 16px; background:none; border:none; color:#ede9e3; font-family:'DM Sans',sans-serif; font-size:13px; text-align:left; cursor:pointer; transition:background 0.15s; }
+  .dropdown-item { display:block; width:100%; padding:11px 16px; background:none; border:none; color:#ede9e3; font-family:'National Park',sans-serif; font-size:13px; text-align:left; cursor:pointer; transition:background 0.15s; }
   .dropdown-item:hover { background:#2a2a2a; }
   .dropdown-item.muted { color:#6a6560; }
 `;
@@ -245,8 +245,8 @@ function StoryViewer({ images, label, avatar, username, onClose }) {
     e("div", { style:{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", flexShrink:0 } },
       e("img", { src: imgSrc(avatar), alt: username, style:{ width:34, height:34, borderRadius:"50%", objectFit:"cover", objectPosition:"top" } }),
       e("div", { style:{ flex:1 } },
-        e("div", { style:{ fontSize:13, fontWeight:600, color:"#fff", fontFamily:"'DM Sans',sans-serif" } }, username),
-        e("div", { style:{ fontSize:11, color:"rgba(255,255,255,0.5)", fontFamily:"'DM Sans',sans-serif" } }, label)
+        e("div", { style:{ fontSize:13, fontWeight:600, color:"#fff", fontFamily:"'National Park',sans-serif" } }, username),
+        e("div", { style:{ fontSize:11, color:"rgba(255,255,255,0.5)", fontFamily:"'National Park',sans-serif" } }, label)
       ),
       e("button", { onClick: onClose, style:{ background:"none", border:"none", color:"#fff", fontSize:22, cursor:"pointer" } }, "✕")
     ),
