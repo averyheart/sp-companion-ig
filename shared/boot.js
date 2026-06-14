@@ -440,15 +440,27 @@ function InstagramProfile() {
             e("div", { className:"lb-date" }, openPost.date, " ago")
           ),
           e("div", { className:"lb-comments", ref: commentsRef },
-            (openPost.comments || []).map((c, i) =>
-              e("div", { className:"lb-comment", key: i },
-                e("div", { className:"lb-c-av" }, c.user.replace("@","").slice(0,2).toUpperCase()),
+            (openPost.comments || []).map((c, i) => {
+              const avatarFilename = c.user.replace("@","").replace(/\./g,"_") + ".jpg";
+              const avatarUrl = `${REPO_BASE}/avatars/${avatarFilename}`;
+              return e("div", { className:"lb-comment", key: i },
+                e("div", { className:"lb-c-av", style:{ overflow:"hidden", padding:0 } },
+                  e("img", {
+                    src: avatarUrl,
+                    alt: c.user,
+                    style:{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top" },
+                    onError: ev => {
+                      ev.target.style.display = "none";
+                      ev.target.parentNode.innerHTML = c.user.replace("@","").slice(0,2).toUpperCase();
+                    }
+                  })
+                ),
                 e("div", null,
                   e("div", { className:"lb-c-user" }, c.user),
                   e("div", { className:"lb-c-text" }, c.text)
                 )
-              )
-            ),
+              );
+            }),
             e("div", { className:"lb-limited" },
               e(LockIcon),
               e("div", { className:"lb-limited-text" }, `Comments on this post have been limited. Only people ${profile.username} follows can comment.`)
